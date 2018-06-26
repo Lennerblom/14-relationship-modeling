@@ -1,14 +1,12 @@
 [![Build Status](https://travis-ci.org/Lennerblom/13-object-relational-mapping.svg?branch=master)](https://travis-ci.org/Lennerblom/13-object-relational-mapping)
 
-# 13: Object Relational Mapping
+# 14 Relationship Modeling
 ___
 ###### TRAVIS: https://travis-ci.org/Lennerblom/14-relational-modeling
-###### HEROKU: https://.herokuapp.com/api/v1/chores/
+###### HEROKU: https://relationship-modeling14.herokuapp.com/api/v1/chores/
 ###### PR: https://github.com/Lennerblom/14-relational-modeling/pull/1
 ___
-This server was created using Express and incorporated a Mongo database to store data.  The home route URL is: https://
-.herokuapp.com/.  https://
-.herokuapp.com/api/v1/chores/ will display all the chores in the database (If it worked in Heroku).  Otherwise, http://localhost:3014/ will work if you fork the repo as described below.
+This server was created using Express and incorporated a Mongo database to store data.  It has two The home route URL is: `https://.herokuapp.com/api/v1/chores/` will display all the chores and `/people` will show people in the database (If it worked in Heroku).  Otherwise, `http://localhost:3014/` will work if you fork the repo as described below.
 
 ### **In order to run my app, do the following:**
 
