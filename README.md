@@ -1,49 +1,29 @@
-![CF](https://camo.githubusercontent.com/70edab54bba80edb7493cad3135e9606781cbb6b/687474703a2f2f692e696d6775722e636f6d2f377635415363382e706e67) 14: Mongo/Express 2 Resource API
-===
+[![Build Status](https://travis-ci.org/Lennerblom/13-object-relational-mapping.svg?branch=master)](https://travis-ci.org/Lennerblom/13-object-relational-mapping)
 
+# 13: Object Relational Mapping
+___
+###### TRAVIS: https://travis-ci.org/Lennerblom/14-relational-modeling
+###### HEROKU: https://.herokuapp.com/api/v1/chores/
+###### PR: https://github.com/Lennerblom/14-relational-modeling/pull/1
+___
+This server was created using Express and incorporated a Mongo database to store data.  The home route URL is: https://
+.herokuapp.com/.  https://
+.herokuapp.com/api/v1/chores/ will display all the chores in the database (If it worked in Heroku).  Otherwise, http://localhost:3014/ will work if you fork the repo as described below.
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Create a PR to your master from your working branch.
-* Ensure that your repository/branch is connected to travis-ci.com
-* Ensure that your repository/branch is connected to a dyno at heroku.com
-* Heroku and Travis should pick you up and deploy
-* Submit on canvas:
-  * a question and observation
-  * how long you spent
-  * link to your pull request
-  * link to your build at travis-ci URL
-  * Heroku Server URL
+### **In order to run my app, do the following:**
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.env** - contains env variables (should be git ignored)
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-  * create a `lint` script for running eslint (eslint **/*.js)
-  * create a `test` script for running tests
-  * create a `start` script for running your server
-* **index.js** - the entry point for your application
-* **src/** - contains your core application files and folders
-* **src/app.js** - (or main.js) contains your core application bootstrap
-* **src/lib/** - contains module definitions
-* **\_\_test\_\_/** - contains unit tests
+Fork this repo and clone it to your system so you can run the below commands.  In the terminal cd into the root folder of the cloned repo.  Type `npm init -y` then `npm i` to load the dependencies. Type `npm run watch` to start the server with nodemon.
 
-## Learning Objectives  
-* students will be able to create a 2 resource MongoDB and Express API
-* students will be able to reference additional resources as part of their mongoose.js based data models
-* students will be able to use the `populate` method to allow for resource query population
+Open another tab in the terminal and run the following commands with HTTPie
 
-## Requirements
+* Using HTTPie run the following commands in the terminal in order:
 
-#### Feature Tasks
-  * continue working on the `express` and `mongoDB` REST API that you started yesterday
-  * include an additional resource that contains a "relationship" to the single resource that has already been created
-  * create `GET`, `POST`, `PUT`, and `DELETE` routes for your newly added resource
-  * test your application to ensure that it meets the standard criteria of a working **full CRUD** REST API
-  * use `populate` in the `get()` route logic your  `/api/new-resource-name/:id` route to populate the associated property used to house related resources **(ex: `List.findById(req.params.id).populate('notes')`)**
+  1. `http POST :3014/api/v1/chores chore=dishes assignedTo=Lydia`
+
+  You should receive a JSON object in the terminal and you'll need to copy and paste the long id and replace the id in the GET, PUT, and DELETE commands below.
+
+  2. `http GET :3014/api/v1/chores/829c4c60-6df0-11e8-8bb8-8f5a2fd3ddda`
+
+  3. `http PUT :3014/api/v1/chores/829c4c60-6df0-11e8-8bb8-8f5a2fd3ddda chore=dishes assignedTo=Elizabeth`
+
+  4. `http DELETE :3014/api/v1/chores/829c4c60-6df0-11e8-8bb8-8f5a2fd3ddda`
