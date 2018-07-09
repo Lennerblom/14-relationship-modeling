@@ -1,11 +1,11 @@
 'use strict';
 
-import mongoose, {Schema} from 'mongoose';
+import mongoose from 'mongoose';
 
 const PeopleSchema = mongoose.Schema({
   Name: {type:String, required:true},
   Age: {type:Number},
-  chore: {type: Schema.Types.ObjectId, ref: 'Chores'},
+  chore: {type: mongoose.Schema.Types.ObjectId, ref: 'Chores'},
   
 });
 

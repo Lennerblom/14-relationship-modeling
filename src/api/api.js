@@ -47,7 +47,7 @@ router.put('/api/v1/:model/:id', (req,res, next) => {
 });
 
 router.delete('/api/v1/:model/:id', (req,res,next) => {
-  req.model.findByIdAndDelete(req.params.id)
+  req.model.findByIdAndDelete(req.params.id)//or .findByIdAndRemove
     .then(data => sendJSON(res, data))
     .catch(next);
 });

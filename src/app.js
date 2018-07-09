@@ -18,7 +18,7 @@ const app = express();
 // App level middleware
 app.use(cors());
 app.use(morgan('dev'));
-app.use(express.json());
+app.use(express.json()); //parse request body as JSON  Without this then you'll still get a body, but it will be an empty object
 
 // Our API Routes
 app.use(router);
