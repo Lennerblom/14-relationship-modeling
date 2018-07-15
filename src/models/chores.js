@@ -1,8 +1,9 @@
 'use strict';
 
-import mongoose from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
 const ChoresSchema = mongoose.Schema({
+  choreID: {type:Schema.Types.ObjectId, ref:'people'},
   chore: {type:String, required:true},
   assignedTo: {type:String, default:'unassigned'},
   completed: {type:Boolean},
